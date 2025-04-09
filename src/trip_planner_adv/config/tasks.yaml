@@ -1,0 +1,103 @@
+identify_best_city:
+  description: >
+    Analyze and select the best city for the trip based 
+    on specific criteria such as weather patterns, seasonal
+    events, and travel costs. This task involves comparing
+    multiple cities, considering factors like current weather
+    conditions, upcoming cultural or seasonal events, and
+    overall travel expenses. 
+    
+    Your final answer must be a detailed
+    report on the chosen city, and everything you found out
+    about it, including the weather forecast, upcoming events,
+    attractions and overall travel expenses.
+
+    Traveling from: {origin}
+    City Options: {cities}
+    Trip Date: {date_range}
+    Traveler Interests: {interests}
+  expected_output: >
+    Detailed report on the chosen city including  
+    weather forecast, and attractions
+  agent: city_expert
+
+build_city_guide:
+  description: >
+    As a local expert on this city you must compile an 
+    in-depth guide for someone traveling there and wanting 
+    to have THE BEST trip ever!
+    Gather information about key attractions, local customs,
+    special events, and daily activity recommendations.
+    Find the best spots to go to, the kind of place only a
+    local would know.
+    This guide should provide a thorough overview of what 
+    the city has to offer, including hidden gems, cultural
+    hotspots, must-visit landmarks, weather forecasts, and
+    high level costs.
+    
+    The final answer must be a comprehensive city guide, 
+    rich in cultural insights and practical tips, 
+    tailored to enhance the travel experience.
+
+    Trip Date: {date_range}
+    Traveling from: {origin}
+    Traveler Interests: {interests}
+  expected_output: >
+    Comprehensive city guide including hidden gems, cultural hotspots, 
+    and practical travel tips
+  agent: local_expert
+
+recommend_flights:
+  description: >
+    Find the best flight options for the trip based on 
+    specific criteria such as travel start and destination locations,
+    start and end date of travel, layovers, etc.
+    This task involves using the Tools provided to you so that you can 
+    make API calls using Tools. Based on the information return by the Tools
+    you compare multiple flight options, considering factors like departure times, 
+    arrival times, layover durations, and overall travel costs. 
+    
+    Your final answer must be a detailed
+    report on the recommended flights, including flight 
+    numbers, departure and arrival times, layover durations, 
+    and total travel costs.
+
+    Traveling from: {origin}
+    Destination: {cities}
+    Trip Date: {date_range}
+  expected_output: >
+    Detailed report on the recommended flights including flight numbers, 
+    departure and arrival times, layover durations, and total travel costs
+  agent: flights_expert
+
+build_travel_plan:
+  description: >
+    Expand the city guide provided by the Local Expert and
+    detailed report on the flight options by 
+    the Flights Search and Airfare Specialist
+    into a full travel itinerary with 
+    detailed per-day plans, including 2-3 flight options, 
+    weather forecasts, places to eat, packing suggestions, 
+    and a budget breakdown.
+    
+    You MUST suggest actual places to visit, actual hotels 
+    to stay and actual restaurants to go to.
+    
+    This itinerary should cover all aspects of the trip, 
+    from arrival to departure, integrating the city guide
+    information with practical travel logistics.
+    
+    Your final answer MUST be a complete expanded travel plan,
+    formatted as markdown, encompassing a daily schedule,
+    anticipated weather conditions, recommended clothing and
+    items to pack, and a detailed budget, ensuring THE BEST
+    TRIP EVER. Be specific and give it a reason why you picked
+    each place, what makes them special!
+
+    Trip Date: {date_range}
+    Traveling from: {origin}
+    Traveler Interests: {interests}
+  expected_output: >
+    Complete expanded travel plan with daily schedule, weather conditions, 
+    packing suggestions, and budget breakdown
+  agent: travel_concierge
