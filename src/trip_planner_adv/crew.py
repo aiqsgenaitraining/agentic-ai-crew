@@ -33,16 +33,7 @@ class TripPlannerAdv():
             verbose=True
         )
 
-    @agent
-    def flights_expert(self) -> Agent:
-        tool = AmadeusSearchTool()
-        amadeus_tools = [tool]
-        
-        return Agent(
-            config=self.agents_config['flights_expert'],
-            tools=amadeus_tools,
-            verbose=True
-        )
+    # Define flights_expert Agent here
 
     @agent
     def travel_concierge(self) -> Agent:
@@ -67,12 +58,7 @@ class TripPlannerAdv():
             output_file='report1.md'
         )
 
-    @task
-    def recommend_flights(self) -> Task:
-        return Task(
-            config=self.tasks_config['recommend_flights'],
-            output_file='report2.md'
-        )
+    # Define recommend_flights Task here
 
     @task
     def build_travel_plan(self) -> Task:
@@ -92,5 +78,4 @@ class TripPlannerAdv():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )

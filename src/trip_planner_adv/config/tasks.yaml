@@ -47,28 +47,28 @@ build_city_guide:
     and practical travel tips
   agent: local_expert
 
-recommend_flights:
-  description: >
-    Find the best flight options for the trip based on 
-    specific criteria such as travel start and destination locations,
-    start and end date of travel, layovers, etc.
-    This task involves using the Tools provided to you so that you can 
-    make API calls using Tools. Based on the information return by the Tools
-    you compare multiple flight options, considering factors like departure times, 
-    arrival times, layover durations, and overall travel costs. 
+# recommend_flights:
+#   description: >
+#     Find the best flight options for the trip based on 
+#     specific criteria such as travel start and destination locations,
+#     start and end date of travel, layovers, etc.
+#     This task involves using the Tools provided to you so that you can 
+#     make API calls using Tools. Based on the information return by the Tools
+#     you compare multiple flight options, considering factors like departure times, 
+#     arrival times, layover durations, and overall travel costs. 
     
-    Your final answer must be a detailed
-    report on the recommended flights, including flight 
-    numbers, departure and arrival times, layover durations, 
-    and total travel costs.
+#     Your final answer must be a detailed
+#     report on the recommended flights, including flight 
+#     numbers, departure and arrival times, layover durations, 
+#     and total travel costs.
 
-    Traveling from: {origin}
-    Destination: {cities}
-    Trip Date: {date_range}
-  expected_output: >
-    Detailed report on the recommended flights including flight numbers, 
-    departure and arrival times, layover durations, and total travel costs
-  agent: flights_expert
+#     Traveling from: {origin}
+#     Destination: {cities}
+#     Trip Date: {date_range}
+#   expected_output: >
+#     Detailed report on the recommended flights including flight numbers, 
+#     departure and arrival times, layover durations, and total travel costs
+#   agent: flights_expert
 
 build_travel_plan:
   description: >
